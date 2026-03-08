@@ -11,7 +11,7 @@ export UPINFO="gh-releases-zsync|${GITHUB_REPOSITORY%/*}|${GITHUB_REPOSITORY#*/}
 export ICON=/usr/share/icons/hicolor/128x128/apps/kicad.png
 export DESKTOP=/usr/share/applications/org.kicad.kicad.desktop
 export DEPLOY_OPENGL=1
-export DEPLOY_SYS_PYTHON=1
+export DEPLOY_PYTHON=1
 # app is hardcoded to look into /usr/share, does not check XDG_DATA_DIRS
 export PATH_MAPPING='/usr/share/kicad:${SHARUN_DIR}/share/kicad'
 
