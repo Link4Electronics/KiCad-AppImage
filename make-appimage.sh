@@ -34,7 +34,8 @@ quick-sharun \
 	/usr/bin/pl_editor              \
 	/usr/bin/kicad                  \
 	/usr/bin/kicad-cli              \
-	/usr/lib/kicad/*/*/*
+	/usr/lib/kicad/*/*/*            \
+	/usr/lib/libngspice.so*
 
 mkdir -p ./AppDir/share/applications
 cp /usr/share/applications/*kicad* ./AppDir/share/applications
