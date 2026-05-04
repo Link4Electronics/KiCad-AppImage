@@ -12,8 +12,6 @@ export ICON=/usr/share/icons/hicolor/128x128/apps/kicad.png
 export DESKTOP=/usr/share/applications/org.kicad.kicad.desktop
 export DEPLOY_OPENGL=1
 export DEPLOY_PYTHON=1
-# app is hardcoded to look into /usr/share, does not check XDG_DATA_DIRS
-export PATH_MAPPING='/usr/share/kicad:${SHARUN_DIR}/share/kicad'
 
 # Deploy dependencies
 quick-sharun \
@@ -40,6 +38,10 @@ quick-sharun \
 
 mkdir -p ./AppDir/share/applications
 cp /usr/share/applications/*kicad* ./AppDir/share/applications
+
+# Upstream now seems to check for the APPDIR env var and hardcodes checking $APPDIR/usr/...
+# This broke the fixes for hardcoded paths we had beforehand
+ln -s . ./AppDir/usr
 
 # some binaries are actually libraries!
 mv -fv ./AppDir/shared/bin/_* ./AppDir/bin
